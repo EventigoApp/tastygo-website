@@ -1,0 +1,31 @@
+import {
+  ShoppingBag,
+  CalendarCheck,
+  BookOpen,
+  LayoutDashboard,
+  Tag,
+  Palette,
+  Check,
+  Minus,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Share2,
+  Sparkles,
+} from 'lucide-vue-next'
+
+export const icons = {
+  ShoppingBag,
+  CalendarCheck,
+  BookOpen,
+  LayoutDashboard,
+  Tag,
+  Palette,
+  Check,
+  Minus,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Share2,
+  Sparkles,
+}
