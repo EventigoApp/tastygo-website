@@ -1,0 +1,10 @@
+services:
+  tastygo-website:
+    build: .
+    container_name: tastygo-website
+    restart: unless-stopped
+
+networks:
+  default:
+    name: eventigo-network
+    external: true
