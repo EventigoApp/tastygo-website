@@ -1,34 +1,34 @@
 <script setup>
+import { watchEffect } from 'vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
-import StatsSection from './components/StatsSection.vue'
-import FeaturesSection from './components/FeaturesSection.vue'
-import PricingSection from './components/PricingSection.vue'
+import HowItWorks from './components/HowItWorks.vue'
+import FreeSection from './components/FreeSection.vue'
+import ProSection from './components/ProSection.vue'
+import PlansSection from './components/PlansSection.vue'
 import AudienceSection from './components/AudienceSection.vue'
-import ContactCta from './components/ContactCta.vue'
+import FaqSection from './components/FaqSection.vue'
+import ContactSection from './components/ContactSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
-import DemoModal from './components/DemoModal.vue'
-import { useDemoModal } from './composables/useDemoModal'
-import { tiers } from './data/pricing'
+import { useCopy, lang } from './i18n'
 
-const demoModal = useDemoModal(tiers.length)
+watchEffect(() => {
+  document.title = useCopy().meta.title
+  document.documentElement.lang = lang.current
+})
 </script>
 
 <template>
   <NavBar />
-  <div class="page-container">
+  <main class="page-container">
     <HeroSection />
-    <StatsSection />
-    <FeaturesSection />
-    <PricingSection @open-demo="demoModal.open" />
+    <HowItWorks />
+    <FreeSection />
+    <ProSection />
+    <PlansSection />
     <AudienceSection />
-    <ContactCta />
-    <SiteFooter />
-  </div>
-  <DemoModal
-    :is-open="demoModal.state.isOpen"
-    :active-index="demoModal.state.activeIndex"
-    @close="demoModal.close"
-    @step="demoModal.step"
-  />
+    <FaqSection />
+    <ContactSection />
+  </main>
+  <div class="page-container"><SiteFooter /></div>
 </template>

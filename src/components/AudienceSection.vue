@@ -1,17 +1,29 @@
+<script setup>
+import { useCopy } from '../i18n'
+import { icons } from '../icons'
+const C = useCopy
+</script>
+
 <template>
-  <section id="kiknek" style="display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px clamp(24px,5vw,80px);align-items:center;padding:40px 0 56px">
-    <div style="display:flex;flex-direction:column;gap:20px;order:2">
-      <span style="display:block;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;color:var(--color-accent-2-700)">Kiknek szól</span>
-      <h2 style="font-size:30px;line-height:1.25">Független éttermeknek, gyorséttermeknek és street food vállalkozásoknak</h2>
-      <p style="font-size:15.5px;line-height:1.65;opacity:0.78;max-width:48ch">Nem kell nagyvállalati IT-csapat a beüzemeléshez. A Tastygo egyetlen felületen kezeli a rendeléseket, a foglalásokat és a menüt — attól függetlenül, hogy egy pultos gyorséttermet vagy több telephelyes éttermet üzemeltetsz.</p>
-      <ul style="font-size:15px;line-height:1.8;opacity:0.85;margin:0;padding-left:20px">
-        <li>Saját domain és arculat, jutalék nélküli online rendelés</li>
-        <li>Asztalfoglalás és elviteles/kiszállításos rendelés egy rendszerben</li>
-        <li>Több telephely kezelése egy admin felületről</li>
-      </ul>
+  <section id="kiknek" class="block">
+    <span class="eyebrow">{{ C().audience.eyebrow }}</span>
+    <h2 class="h2">{{ C().audience.title }}</h2>
+    <div class="aud">
+      <article v-for="([icon, title, text], i) in C().audience.items" :key="title" class="card-a" :class="{ alt: i % 2 }">
+        <component :is="icons[icon]" :size="26" :stroke-width="2.5" />
+        <h3>{{ title }}</h3>
+        <p>{{ text }}</p>
+      </article>
     </div>
-    <figure style="margin:0;order:1;border-radius:calc(2 * var(--radius-lg));overflow:hidden">
-      <div style="width:100%;aspect-ratio:4/3;background:var(--color-neutral-300);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--color-text);opacity:0.6">Étterem / rendelési felület fotó</div>
-    </figure>
   </section>
 </template>
+
+<style scoped>
+.aud { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+.card-a { background: var(--color-accent-100); border-radius: var(--radius-lg); padding: 24px; color: var(--color-accent-800); }
+.card-a.alt { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.card-a h3 { font-size: 20px; margin: 14px 0 6px; color: var(--color-text); }
+.card-a p { margin: 0; font-size: 14px; color: var(--color-neutral-800); }
+@media (max-width: 960px) { .aud { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .aud { grid-template-columns: 1fr; } }
+</style>

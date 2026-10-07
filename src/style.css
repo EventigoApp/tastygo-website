@@ -47,3 +47,14 @@ a:hover { color: var(--color-accent-800); text-decoration: underline; }
 .dialog { max-width: 760px; width: 100%; padding: 0; overflow: hidden; max-height: 88vh; display: flex; flex-direction: column; border-radius: calc(var(--radius-lg) * 1.15); background: var(--color-surface); box-shadow: var(--shadow-lg); }
 
 .page-container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px); }
+
+/* Section scaffolding shared by the page sections */
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+.block { padding: 64px 0 24px; }
+.eyebrow { display: inline-block; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--color-accent-700); }
+.h2 { font-size: clamp(30px, 3.6vw, 42px); line-height: 1.1; letter-spacing: -0.01em; margin: 10px 0 0; max-width: 22ch; }
+.sub { font-size: 17px; color: var(--color-neutral-800); max-width: 640px; margin: 14px 0 0; }
+.btn-lg { padding: 13px 26px; font-size: 16px; }
+.btn:disabled { opacity: 0.55; cursor: default; }
+textarea.input { font: inherit; font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
