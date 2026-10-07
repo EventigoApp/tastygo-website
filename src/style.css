@@ -1,3 +1,7 @@
+/* Caprasimo has no Ő ő Ű ű. This supplement (drawn from Caprasimo's own glyphs, OFL,
+   see public/fonts/OFL-Caprasimo.txt) fills them in; the built CSS loads after the
+   Google Fonts stylesheet, so it wins for these four letters. */
+@font-face { font-family: "Caprasimo"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/caprasimo-hu.woff2") format("woff2"); unicode-range: U+0150-0151, U+0170-0171; }
 :root {
   --color-bg: #f5ead8; --color-surface: #ebddc5; --color-text: #201e1d;
   --color-accent: #c67139; --color-accent-2: #7a8a5e;
