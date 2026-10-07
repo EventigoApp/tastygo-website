@@ -1,6 +1,7 @@
 <script setup>
 import { useCopy } from '../i18n'
 import { icons } from '../icons'
+import { startSignup } from '../signup'
 const C = useCopy
 </script>
 
@@ -15,6 +16,10 @@ const C = useCopy
         <h3>{{ title }}</h3>
         <p>{{ text }}</p>
       </article>
+    </div>
+    <div class="cta-row">
+      <a href="#regisztracio" class="btn btn-primary btn-lg" @click="startSignup('free')">{{ C().hero.cta }} <component :is="icons.ArrowRight" :size="18" :stroke-width="2.75" /></a>
+      <span>{{ C().hero.note }}</span>
     </div>
   </section>
 </template>

@@ -22,7 +22,9 @@ const year = new Date().getFullYear()
       <b>{{ C().footer.company }}</b>
       <a :href="`mailto:${CONTACT_EMAIL}`">{{ CONTACT_EMAIL }}</a>
       <a :href="appLink('/login')">{{ C().nav.login }}</a>
-      <a :href="appLink('/signup')">{{ C().nav.start }}</a>
+      <a href="#regisztracio">{{ C().nav.start }}</a>
+      <a :href="appLink('/legal/terms')" target="_blank" rel="noopener">{{ C().footer.terms }}</a>
+      <a :href="appLink('/legal/privacy')" target="_blank" rel="noopener">{{ C().footer.privacy }}</a>
     </div>
     <div class="foot-bottom">© {{ year }} TastyGo · {{ C().footer.rights }}</div>
   </footer>

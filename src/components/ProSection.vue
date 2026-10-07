@@ -2,6 +2,7 @@
 import KitchenMock from './KitchenMock.vue'
 import { useCopy } from '../i18n'
 import { icons } from '../icons'
+import { startSignup } from '../signup'
 const C = useCopy
 </script>
 
@@ -24,6 +25,10 @@ const C = useCopy
         </ul>
       </article>
     </div>
+    <div class="cta-row">
+      <a href="#regisztracio" class="btn btn-primary btn-lg" @click="startSignup('pro')">{{ C().plans.pro.cta }} <component :is="icons.ArrowRight" :size="18" :stroke-width="2.75" /></a>
+      <a href="#arak" class="btn btn-lg pro-prices">{{ C().nav.pricing }}</a>
+    </div>
   </section>
 </template>
 
@@ -40,4 +45,6 @@ const C = useCopy
 .group li svg { flex: none; margin-top: 3px; color: var(--color-accent-2-600); }
 @media (max-width: 1000px) { .pro-head { grid-template-columns: 1fr; } .groups { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 620px) { .groups { grid-template-columns: 1fr; } }
+.pro-prices { color: var(--color-bg); border-color: color-mix(in srgb, var(--color-bg) 40%, transparent); }
+.pro-prices:hover { background: color-mix(in srgb, var(--color-bg) 12%, transparent); color: var(--color-bg); text-decoration: none; }
 </style>

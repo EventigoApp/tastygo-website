@@ -13,7 +13,7 @@ export function setLang(l) {
 
 const HU = {
   meta: { title: 'TastyGo – ingyenes éttermi weboldal, online rendelés és asztalfoglalás jutalék nélkül' },
-  nav: { how: 'Hogyan működik', free: 'Ingyenes weboldal', pro: 'Pro', pricing: 'Árak', faq: 'GYIK', login: 'Belépés', start: 'Kezdd el ingyen', menu: 'Menü' },
+  nav: { how: 'Hogyan működik', free: 'Ingyenes weboldal', pro: 'Pro', pricing: 'Árak', faq: 'GYIK', login: 'Belépés', start: 'Kezdd el ingyen', startShort: 'Regisztráció', menu: 'Menü' },
   hero: {
     eyebrow: 'Éttermeknek, bisztróknak, büféknek',
     title: 'Az éttermed weboldala 10 perc alatt.',
@@ -68,7 +68,7 @@ const HU = {
   plans: {
     eyebrow: 'Árak', title: 'Kezdd ingyen, válts, amikor szükséged van rá', sub: 'Nincs jutalék, nincs hűségidő. A Pro csomagot havonta fizeted, és bármikor lemondhatod.',
     free: { name: 'Ingyenes', price: '0 Ft', per: 'örökre', desc: 'Egyoldalas éttermi weboldal a saját tastygo.hu címeden.', cta: 'Kezdd el ingyen', items: ['Vizuális szerkesztő', 'Étlap, galéria, nyitvatartás, térkép', 'Főoldali képváltó, színek, betűtípusok', 'neved.tastygo.hu aldomain', 'Ingyenes tárhely és SSL'] },
-    pro: { name: 'Pro', badge: 'Legnépszerűbb', price: '20 000 Ft', per: '/ hó', setup: '+ 50 000 Ft egyszeri beállítás', desc: 'Online rendelés, asztalfoglalás és minden, ami a működéshez kell.', cta: 'Pro kipróbálása', items: ['Minden az ingyenes csomagból', 'Online rendelés, 0% jutalék', 'Asztalfoglalás', 'Napi menü előrendeléssel', 'Konyhai tábla és irányítópult', 'SimplePay kártyás fizetés', 'Saját domain, TastyGo jelvény nélkül', 'Több helyszín és munkatárs'] },
+    pro: { name: 'Pro', badge: 'Legnépszerűbb', price: '20 000 Ft', per: '/ hó', setup: '+ 50 000 Ft egyszeri beállítás', desc: 'Online rendelés, asztalfoglalás és minden, ami a működéshez kell.', cta: 'Pro kipróbálása', items: ['Minden az ingyenes csomagból', 'Online rendelés, 0% jutalék', 'Asztalfoglalás', 'Napi menü előrendeléssel', 'Konyhai tábla és irányítópult', 'Online fizetés: SimplePay, Barion, SZÉP kártya', 'Billingo számlázás, NTAK adatszolgáltatás', 'Saját domain, TastyGo jelvény nélkül', 'Több helyszín és munkatárs'] },
     custom: { name: 'Egyedi', price: 'Ajánlat alapján', desc: 'Étteremláncoknak, egyedi integrációkhoz (pénztárgép, számlázó, futárszolgálat).', cta: 'Kérj ajánlatot' },
     compare: 'Részletes összehasonlítás',
     rows: [
@@ -96,6 +96,22 @@ const HU = {
       ['Lemondhatom bármikor?', 'Igen, nincs hűségidő. Ha visszaváltasz az ingyenes csomagra, a weboldalad megmarad.'],
     ],
   },
+  signup: {
+    eyebrow: 'Regisztráció', title: 'Hozd létre az éttermed oldalát most.', sub: 'Két perc az egész. A regisztráció után egyből a szerkesztőben vagy: töltsd fel az étlapot, válassz színeket, és tedd közzé.',
+    perks: ['Az ingyenes csomag örökre ingyenes, nem kell bankkártya', 'Saját címed: neved.tastygo.hu', 'Bármikor válthatsz Pro-ra: online rendelés és asztalfoglalás, 0% jutalék', 'Magyar nyelvű segítség e-mailben'],
+    plan: 'Csomag', plans: { free: 'Ingyenes weboldal', pro: 'Pro' },
+    planNote: { free: 'Kezdd ingyen, a Pro bármikor bekapcsolható.', pro: 'A regisztráció után az előfizetés oldalán aktiválhatod a Pro-t.' },
+    restaurant: 'Étterem neve', name: 'Neved', phone: 'Telefonszám', email: 'E-mail cím', password: 'Jelszó', passwordHint: 'Legalább 8 karakter.',
+    terms: ['Elfogadom az ', 'Általános Szerződési Feltételeket', ', és megismertem az ', 'adatkezelési tájékoztatót', '.'],
+    submit: { free: 'Ingyenes oldal létrehozása', pro: 'Regisztráció és Pro aktiválása' }, sending: 'Fiók létrehozása…',
+    done: 'Kész! Átirányítunk a szerkesztőbe…', haveAccount: 'Van már fiókod?',
+    errors: {
+      required: 'Kötelező mező', invalid_email: 'Adj meg egy érvényes e-mail címet', password_too_short: 'Legalább 8 karakter legyen',
+      invalid_phone: 'Adj meg egy érvényes telefonszámot', terms_required: 'A regisztrációhoz fogadd el a feltételeket', email_taken: 'Ezzel az e-mail címmel már van fiók. Lépj be!',
+      rate_limited: 'Túl sok próbálkozás. Próbáld újra egy óra múlva.', network: 'Nem sikerült kapcsolódni. Ellenőrizd az internetet, és próbáld újra.',
+      failed: 'Nem sikerült a regisztráció. Próbáld újra, vagy írj nekünk: info@tastygo.hu.',
+    },
+  },
   contact: {
     eyebrow: 'Kapcsolat', title: 'Segítsünk az indulásban?', sub: 'Kérj ingyenes, személyes bemutatót, vagy kérdezz bátran. Egy munkanapon belül válaszolunk.',
     name: 'Neved', email: 'E-mail cím', restaurant: 'Étterem neve', message: 'Miben segíthetünk?', send: 'Bemutató kérése', sending: 'Küldés…',
@@ -106,7 +122,7 @@ const HU = {
 
 const EN = {
   meta: { title: 'TastyGo – free restaurant website, online ordering and table booking with no commission' },
-  nav: { how: 'How it works', free: 'Free website', pro: 'Pro', pricing: 'Pricing', faq: 'FAQ', login: 'Log in', start: 'Start for free', menu: 'Menu' },
+  nav: { how: 'How it works', free: 'Free website', pro: 'Pro', pricing: 'Pricing', faq: 'FAQ', login: 'Log in', start: 'Start for free', startShort: 'Sign up', menu: 'Menu' },
   hero: {
     eyebrow: 'For restaurants, bistros and food counters',
     title: 'Your restaurant website in 10 minutes.',
@@ -161,7 +177,7 @@ const EN = {
   plans: {
     eyebrow: 'Pricing', title: 'Start free, upgrade when you need it', sub: 'No commission, no lock-in. Pro is billed monthly and you can cancel any time.',
     free: { name: 'Free', price: '0 Ft', per: 'forever', desc: 'A one-page restaurant website at your own tastygo.hu address.', cta: 'Start for free', items: ['Visual editor', 'Menu, gallery, hours, map', 'Hero slideshow, colors, fonts', 'yourname.tastygo.hu subdomain', 'Free hosting and SSL'] },
-    pro: { name: 'Pro', badge: 'Most popular', price: '20 000 Ft', per: '/ month', setup: '+ 50 000 Ft one-time setup', desc: 'Online ordering, table bookings and everything you need to run it.', cta: 'Try Pro', items: ['Everything in Free', 'Online ordering, 0% commission', 'Table bookings', 'Daily menu pre-orders', 'Kitchen board and dashboard', 'SimplePay card payments', 'Own domain, no TastyGo badge', 'Several locations and staff'] },
+    pro: { name: 'Pro', badge: 'Most popular', price: '20 000 Ft', per: '/ month', setup: '+ 50 000 Ft one-time setup', desc: 'Online ordering, table bookings and everything you need to run it.', cta: 'Try Pro', items: ['Everything in Free', 'Online ordering, 0% commission', 'Table bookings', 'Daily menu pre-orders', 'Kitchen board and dashboard', 'Online payments: SimplePay, Barion, SZÉP card', 'Billingo invoicing, NTAK reporting', 'Own domain, no TastyGo badge', 'Several locations and staff'] },
     custom: { name: 'Custom', price: 'On request', desc: 'For restaurant groups and custom integrations (POS, invoicing, couriers).', cta: 'Ask for a quote' },
     compare: 'Compare plans',
     rows: [
@@ -188,6 +204,22 @@ const EN = {
       ['Which languages are supported?', 'The editor and dashboard are in Hungarian and English; guests see your site in your restaurant\'s language.'],
       ['Can I cancel any time?', 'Yes, there is no lock-in. If you switch back to the free plan, your website stays.'],
     ],
+  },
+  signup: {
+    eyebrow: 'Sign up', title: 'Create your restaurant\'s site now.', sub: 'It takes two minutes. After signing up you land straight in the editor: add your menu, pick colors and publish.',
+    perks: ['The free plan is free forever, no card needed', 'Your own address: yourname.tastygo.hu', 'Switch to Pro any time: online ordering and table bookings, 0% commission', 'Help by email in Hungarian and English'],
+    plan: 'Plan', plans: { free: 'Free website', pro: 'Pro' },
+    planNote: { free: 'Start for free, switch on Pro whenever you like.', pro: 'After signing up you can activate Pro on the plan page.' },
+    restaurant: 'Restaurant name', name: 'Your name', phone: 'Phone', email: 'Email address', password: 'Password', passwordHint: 'At least 8 characters.',
+    terms: ['I accept the ', 'terms of service', ' and I have read the ', 'privacy notice', '.'],
+    submit: { free: 'Create my free site', pro: 'Sign up and activate Pro' }, sending: 'Creating your account…',
+    done: 'Done! Taking you to the editor…', haveAccount: 'Already have an account?',
+    errors: {
+      required: 'Required', invalid_email: 'Enter a valid email address', password_too_short: 'Use at least 8 characters',
+      invalid_phone: 'Enter a valid phone number', terms_required: 'Accept the terms to sign up', email_taken: 'An account with this email already exists. Log in instead.',
+      rate_limited: 'Too many attempts. Try again in an hour.', network: 'Could not connect. Check your internet and try again.',
+      failed: 'Sign-up failed. Try again or email us at info@tastygo.hu.',
+    },
   },
   contact: {
     eyebrow: 'Contact', title: 'Want help getting started?', sub: 'Ask for a free personal demo or just ask a question. We reply within one working day.',

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useCopy, lang, setLang } from '../i18n'
 import { appLink } from '../config'
+import { startSignup } from '../signup'
 import { icons } from '../icons'
 
 const open = ref(false)
@@ -17,12 +18,15 @@ const links = [['how', '#hogyan'], ['free', '#ingyenes'], ['pro', '#pro'], ['pri
       <nav class="nav-links" :class="{ open }" :aria-label="useCopy().nav.menu">
         <a v-for="[k, href] in links" :key="k" :href="href" @click="open = false">{{ useCopy().nav[k] }}</a>
         <a :href="appLink('/login')" class="nav-login">{{ useCopy().nav.login }}</a>
-      </nav>
-      <div class="nav-right">
-        <div class="seg" role="group" aria-label="Language">
+        <div class="seg menu-lang" role="group" aria-label="Language">
           <button v-for="l in ['hu', 'en']" :key="l" :class="{ on: lang.current === l }" @click="setLang(l)">{{ l.toUpperCase() }}</button>
         </div>
-        <a :href="appLink('/signup')" class="btn btn-primary nav-cta">{{ useCopy().nav.start }}</a>
+      </nav>
+      <div class="nav-right">
+        <div class="seg head-lang" role="group" aria-label="Language">
+          <button v-for="l in ['hu', 'en']" :key="l" :class="{ on: lang.current === l }" @click="setLang(l)">{{ l.toUpperCase() }}</button>
+        </div>
+        <a href="#regisztracio" class="btn btn-primary nav-cta" @click="startSignup('free'); open = false"><span class="long">{{ useCopy().nav.start }}</span><span class="short">{{ useCopy().nav.startShort }}</span></a>
         <button class="btn btn-icon burger" :aria-expanded="open" :aria-label="useCopy().nav.menu" @click="open = !open">
           <component :is="open ? icons.X : icons.Menu" :size="20" :stroke-width="2.5" />
         </button>
@@ -54,5 +58,8 @@ const links = [['how', '#hogyan'], ['free', '#ingyenes'], ['pro', '#pro'], ['pri
   .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--color-divider); }
   .nav-login { margin-left: 0; }
 }
-@media (max-width: 560px) { .nav-cta { display: none; } }
+
+.nav-cta .short { display: none; }
+.menu-lang { display: none; }
+@media (max-width: 560px) { .head-lang { display: none; } .menu-lang { display: inline-flex; align-self: flex-start; margin-top: 12px; } .nav-right { margin-left: auto; } .nav-cta { padding: 8px 14px; } .nav-cta .long { display: none; } .nav-cta .short { display: inline; } .logo-text { font-size: 19px; } .nav-inner { gap: 12px; } }
 </style>

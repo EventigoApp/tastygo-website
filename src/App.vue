@@ -6,6 +6,7 @@ import HowItWorks from './components/HowItWorks.vue'
 import FreeSection from './components/FreeSection.vue'
 import ProSection from './components/ProSection.vue'
 import PlansSection from './components/PlansSection.vue'
+import SignupSection from './components/SignupSection.vue'
 import AudienceSection from './components/AudienceSection.vue'
 import FaqSection from './components/FaqSection.vue'
 import ContactSection from './components/ContactSection.vue'
@@ -26,6 +27,7 @@ watchEffect(() => {
     <FreeSection />
     <ProSection />
     <PlansSection />
+    <SignupSection />
     <AudienceSection />
     <FaqSection />
     <ContactSection />

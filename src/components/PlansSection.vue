@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import { useCopy } from '../i18n'
-import { appLink } from '../config'
 import { icons } from '../icons'
+import { startSignup } from '../signup'
 const C = useCopy
 const showTable = ref(false)
 </script>
@@ -17,7 +17,7 @@ const showTable = ref(false)
         <h3>{{ C().plans.free.name }}</h3>
         <div class="price"><b>{{ C().plans.free.price }}</b><span>{{ C().plans.free.per }}</span></div>
         <p class="desc">{{ C().plans.free.desc }}</p>
-        <a :href="appLink('/signup')" class="btn btn-secondary btn-block">{{ C().plans.free.cta }}</a>
+        <a href="#regisztracio" class="btn btn-secondary btn-block" @click="startSignup('free')">{{ C().plans.free.cta }}</a>
         <ul><li v-for="it in C().plans.free.items" :key="it"><component :is="icons.Check" :size="15" :stroke-width="3" />{{ it }}</li></ul>
       </article>
       <article class="plan featured">
@@ -26,7 +26,7 @@ const showTable = ref(false)
         <div class="price"><b>{{ C().plans.pro.price }}</b><span>{{ C().plans.pro.per }}</span></div>
         <div class="setup">{{ C().plans.pro.setup }}</div>
         <p class="desc">{{ C().plans.pro.desc }}</p>
-        <a :href="appLink('/signup')" class="btn btn-primary btn-block">{{ C().plans.pro.cta }}</a>
+        <a href="#regisztracio" class="btn btn-primary btn-block" @click="startSignup('pro')">{{ C().plans.pro.cta }}</a>
         <ul><li v-for="it in C().plans.pro.items" :key="it"><component :is="icons.Check" :size="15" :stroke-width="3" />{{ it }}</li></ul>
       </article>
       <article class="plan custom">

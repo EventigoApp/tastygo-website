@@ -60,5 +60,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 .sub { font-size: 17px; color: var(--color-neutral-800); max-width: 640px; margin: 14px 0 0; }
 .btn-lg { padding: 13px 26px; font-size: 16px; }
 .btn:disabled { opacity: 0.55; cursor: default; }
+/* Call to action under a section */
+.cta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; margin-top: 32px; }
+.cta-row > span { font-size: 14px; color: var(--color-neutral-700); }
+.btn:hover { text-decoration: none; }
 textarea.input { font: inherit; font-size: 14px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
